@@ -1,0 +1,106 @@
+# khronos
+
+[![Build Status](https://travis-ci.org/hotchemi/khronos.svg?branch=master)](https://travis-ci.org/hotchemi/khronos) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+An intuitive Date extensions in Kotlin.
+
+## Usage
+
+### Add durations to date
+
+```kotlin
+val now = Dates.now
+val nextWeek = now + 1.week
+val dayBeforeYesterday = now - 2.days
+
+// shortcuts #1
+val today = Dates.today
+val tomorrow = Dates.tomorrow
+val yesterday = Dates.yesterday
+
+// shortcuts #2
+val yesterday = 1.days.ago
+val fiveYearsLater = 5.years.later
+```
+
+### Initialize by specifying date components
+
+```kotlin
+val birthday = Dates.of(year: 1990, month: 1, day: 21)
+val firstCommitDate = Dates.of(year: 2016, month: 2, day: 26, hour: 18, minute: 58, second: 31)
+```
+
+### Initialize by changing date components
+
+```kotlin
+val now = Dates.now
+val christmas = now.with(month: 12, day: 25)
+val thisSunday = now.with(weekday: 1)
+
+// shortcuts
+val newYearDay = now.beginningOfYear
+val timeLimit = now.endOfHour
+```
+
+### Check day of the week
+
+```kotlin
+Dates.now.isFriday() // false, OMG!
+```
+
+### Time zone
+
+```kotlin
+val dateInCST = Dates.now.with(TimeZone.getTimeZone("CST"))
+dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
+```
+
+### Format and parse
+
+```kotlin
+5.minutes.later.stringFromFormat("yyyy-MM-dd HH:mm:SS")
+//=> "2015-03-01 12:05:00"
+
+"1987-06-02".dateFromFormat("yyyy-MM-dd")
+//=> Dates.at(year: 1987, month: 6, day: 2)
+```
+
+### Compare dates
+
+```kotlin
+1.day.ago > 2.days.ago // true
+1.day.ago in 2.days.ago..Dates.now // true
+firstCommitDate > now // false
+```
+
+## Install
+
+`${latest.version}` is 0.1.0.
+
+```groovy
+dependencies {
+  compile 'com.github.hotchemi:khronos:${latest.version}'
+}
+```
+
+## Notice
+
+khronos is definitely inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece).
+
+## Licence
+
+```
+Copyright 2016 Shintaro Katafuchi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

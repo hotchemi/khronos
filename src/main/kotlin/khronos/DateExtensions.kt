@@ -1,0 +1,100 @@
+package khronos
+
+import java.text.SimpleDateFormat
+import java.util.*
+
+val calendar: Calendar by lazy {
+    Calendar.getInstance()
+}
+
+operator fun Date.plus(duration: Duration): Date {
+    calendar.time = this
+    calendar.add(duration.unit, duration.value)
+    return calendar.time
+}
+
+operator fun Date.minus(duration: Duration): Date {
+    calendar.time = this
+    calendar.add(duration.unit, -duration.value)
+    return calendar.time
+}
+
+operator fun Date.rangeTo(other: Date) = DateRange(this, other)
+
+fun Date.with(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0): Date {
+    calendar.time = this
+    if (year > 0) calendar.set(Calendar.YEAR, year)
+    if (month > 0) calendar.set(Calendar.MONTH, month)
+    if (day > 0) calendar.set(Calendar.DATE, day)
+    if (hour > 0) calendar.set(Calendar.HOUR, hour)
+    if (minute > 0) calendar.set(Calendar.MINUTE, minute)
+    if (second > 0) calendar.set(Calendar.SECOND, second)
+    return calendar.time
+}
+
+fun Date.with(weekday: Int = 0): Date {
+    calendar.time = this
+    if (weekday > 0) calendar.set(Calendar.WEEK_OF_MONTH, weekday)
+    return calendar.time
+}
+
+fun Date.with(timezone: TimeZone): Date {
+    val cal = Calendar.getInstance(timezone)
+    cal.time = this
+    return cal.time
+}
+
+fun Date.beginningOfYear() = with(month = 1, day = 1, hour = 0, minute = 0, second = 0)
+
+fun Date.endOfYear() = with(month = 12, day = 31, hour = 23, minute = 59, second = 59)
+
+fun Date.beginningOfMonth() = with(day = 1, hour = 0, minute = 0, second = 0)
+
+fun Date.endOfMonth(): Nothing = TODO()
+
+fun Date.beginningOfWeek(): Nothing = TODO()
+
+fun Date.endOfWeek(): Nothing = TODO()
+
+fun Date.beginningOfHour() = with(minute = 0, second = 0)
+
+fun Date.beginningOfMinute() = with(second = 0)
+
+fun Date.endOfMinute() = with(second = 59)
+
+fun Date.stringFromFormat(format: String) = SimpleDateFormat(format).format(this)
+
+fun Date.isSunday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
+}
+
+fun Date.isMonday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY
+}
+
+fun Date.isTuesday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY
+}
+
+fun Date.isWednesday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY
+}
+
+fun Date.isThursday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY
+}
+
+fun Date.isFriday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
+}
+
+fun Date.isSaturday(): Boolean {
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
+}
