@@ -24,7 +24,7 @@ object Dates {
     fun of(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0): Date {
         calendar.time = Date()
         if (year > 0) calendar.set(Calendar.YEAR, year)
-        if (month > 0) calendar.set(Calendar.MONTH, month)
+        if (month > 0) calendar.set(Calendar.MONTH, month - 1)
         if (day > 0) calendar.set(Calendar.DATE, day)
         if (hour > 0) calendar.set(Calendar.HOUR, hour)
         if (minute > 0) calendar.set(Calendar.MINUTE, minute)
