@@ -39,6 +39,7 @@ fun Date.with(weekday: Int = 0): Date {
 }
 
 fun Date.with(timezone: TimeZone): Date {
+    // create new calendar
     val cal = Calendar.getInstance(timezone)
     cal.time = this
     return cal.time
@@ -50,13 +51,19 @@ fun Date.endOfYear() = with(month = 12, day = 31, hour = 23, minute = 59, second
 
 fun Date.beginningOfMonth() = with(day = 1, hour = 0, minute = 0, second = 0)
 
-fun Date.endOfMonth(): Nothing = TODO()
+fun Date.endOfMonth(): Date {
+    calendar.time = this
+    val lastDay = calendar.getActualMaximum(Calendar.DATE)
+    return with(day = lastDay, hour = 23, minute = 59, second = 59)
+}
 
-fun Date.beginningOfWeek(): Nothing = TODO()
+fun Date.beginningOfDay() = with(hour = 0, minute = 0, second = 0)
 
-fun Date.endOfWeek(): Nothing = TODO()
+fun Date.endOfDay() = with(hour = 23, minute = 59, second = 59)
 
 fun Date.beginningOfHour() = with(minute = 0, second = 0)
+
+fun Date.endOfHour() = with(minute = 59, second = 59)
 
 fun Date.beginningOfMinute() = with(second = 0)
 
