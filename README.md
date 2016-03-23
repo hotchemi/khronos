@@ -1,6 +1,6 @@
 # khronos
 
-[![Build Status](https://travis-ci.org/hotchemi/khronos.svg?branch=master)](https://travis-ci.org/hotchemi/khronos) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![Build Status](https://travis-ci.org/hotchemi/khronos.svg?branch=master)](https://travis-ci.org/hotchemi/khronos) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An intuitive Date extensions in Kotlin.
 
@@ -20,7 +20,7 @@ val yesterday = Dates.yesterday
 
 // shortcuts #2
 val yesterday = 1.days.ago
-val fiveYearsLater = 5.years.since
+val fiveYearsSince = 5.years.since
 ```
 
 ### Initialize by specifying date components
@@ -74,7 +74,7 @@ dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
 
 ## Install
 
-`${latest.version}` is 0.0.1.
+`${latest.version}` is [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion).
 
 ```groovy
 dependencies {
