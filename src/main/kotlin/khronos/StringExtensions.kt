@@ -2,4 +2,4 @@ package khronos;
 
 import java.text.SimpleDateFormat
 
-fun String.dateFromFormat(format: String) = SimpleDateFormat(format).parse(this)
+fun String.toDate(format: String) = SimpleDateFormat(format).parse(this)

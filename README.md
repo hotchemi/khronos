@@ -20,7 +20,7 @@ val yesterday = Dates.yesterday
 
 // shortcuts #2
 val yesterday = 1.days.ago
-val fiveYearsLater = 5.years.later
+val fiveYearsLater = 5.years.since
 ```
 
 ### Initialize by specifying date components
@@ -39,13 +39,13 @@ val thisSunday = now.with(weekday: 1)
 
 // shortcuts
 val newYearDay = now.beginningOfYear
-val timeLimit = now.endOfHour
+val newYearsEve = now.endOfYear
 ```
 
 ### Check day of the week
 
 ```kotlin
-Dates.now.isFriday() // false, OMG!
+Dates.now.isFriday() // false
 ```
 
 ### Time zone
@@ -58,11 +58,11 @@ dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
 ### Format and parse
 
 ```kotlin
-5.minutes.later.stringFromFormat("yyyy-MM-dd HH:mm:SS")
+5.minutes.later.toString("yyyy-MM-dd HH:mm:SS")
 //=> "2015-03-01 12:05:00"
 
-"1987-06-02".dateFromFormat("yyyy-MM-dd")
-//=> Dates.at(year: 1987, month: 6, day: 2)
+"1987-06-02".toDate("yyyy-MM-dd")
+//=> Dates.of(year: 1987, month: 6, day: 2)
 ```
 
 ### Compare dates
@@ -70,12 +70,11 @@ dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
 ```kotlin
 1.day.ago > 2.days.ago // true
 1.day.ago in 2.days.ago..Dates.now // true
-firstCommitDate > now // false
 ```
 
 ## Install
 
-`${latest.version}` is 0.1.0.
+`${latest.version}` is 0.0.1.
 
 ```groovy
 dependencies {

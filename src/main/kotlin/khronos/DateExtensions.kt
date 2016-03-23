@@ -81,7 +81,7 @@ val Date.beginningOfMinute: Date
 val Date.endOfMinute: Date
     get() = with(second = 59)
 
-fun Date.stringFromFormat(format: String) = SimpleDateFormat(format).format(this)
+fun Date.toString(format: String) = SimpleDateFormat(format).format(this)
 
 fun Date.isSunday(): Boolean {
     calendar.time = this
