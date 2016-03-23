@@ -1,47 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Khronos by hotchemi</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/hotchemi/khronos">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/hotchemi/khronos/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/hotchemi/khronos/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Khronos</h1>
+      <h2 class="project-tagline">An intuitive Date extensions in Kotlin.</h2>
+      <a href="https://github.com/hotchemi/khronos" class="btn">View on GitHub</a>
+      <a href="https://github.com/hotchemi/khronos/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/hotchemi/khronos/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Khronos</h1>
-          <p>An intuitive Date extensions in Kotlin.</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/hotchemi">hotchemi</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="khronos" class="anchor" href="#khronos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>khronos</h1>
 
-<p><a href="https://travis-ci.org/hotchemi/khronos"><img src="https://travis-ci.org/hotchemi/khronos.svg?branch=master" alt="Build Status"></a> <a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-APACHE2-green.svg" alt="License"></a></p>
+<p><a href="https://travis-ci.org/hotchemi/khronos"><img src="https://travis-ci.org/hotchemi/khronos.svg?branch=master" alt="Build Status"></a> <a href="https://bintray.com/hotchemi/maven/khronos/_latestVersion"><img src="https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg" alt="Download"> </a> <a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-APACHE2-green.svg" alt="License"></a></p>
 
 <p>An intuitive Date extensions in Kotlin.</p>
 
@@ -62,7 +43,7 @@
 
 <span class="pl-c">// shortcuts #2</span>
 <span class="pl-k">val</span> <span class="pl-en">yesterday</span> <span class="pl-k">=</span> <span class="pl-c1">1.</span>days<span class="pl-k">.</span>ago
-<span class="pl-k">val</span> <span class="pl-en">fiveYearsLater</span> <span class="pl-k">=</span> <span class="pl-c1">5.</span>years<span class="pl-k">.</span>since</pre></div>
+<span class="pl-k">val</span> <span class="pl-en">fiveYearsSince</span> <span class="pl-k">=</span> <span class="pl-c1">5.</span>years<span class="pl-k">.</span>since</pre></div>
 
 <h3>
 <a id="initialize-by-specifying-date-components" class="anchor" href="#initialize-by-specifying-date-components" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize by specifying date components</h3>
@@ -110,7 +91,7 @@ dateInCST<span class="pl-k">.</span>timeZone <span class="pl-c">//=&gt; CST (CDT
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 
-<p><code>${latest.version}</code> is 0.0.1.</p>
+<p><code>${latest.version}</code> is <a href="https://bintray.com/hotchemi/maven/khronos/_latestVersion"><img src="https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg" alt="Download"> </a>.</p>
 
 <div class="highlight highlight-source-groovy"><pre>dependencies {
   compile <span class="pl-s"><span class="pl-pds">'</span>com.github.hotchemi:khronos:${latest.version}<span class="pl-pds">'</span></span>
@@ -138,10 +119,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 </code></pre>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/hotchemi/khronos">Khronos</a> is maintained by <a href="https://github.com/hotchemi">hotchemi</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
