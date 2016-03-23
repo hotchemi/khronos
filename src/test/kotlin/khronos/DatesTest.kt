@@ -36,7 +36,7 @@ class DatesTest {
 
     @Test fun dateMonth() {
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.MONTH, 1)
+        calendar.set(Calendar.MONTH, 0)
         assertEquals(expected = calendar.time, actual = Dates.of(month = 1))
     }
 
