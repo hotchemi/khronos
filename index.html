@@ -1,37 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <title>Khronos by hotchemi</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/hotchemi/khronos">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/hotchemi/khronos/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/hotchemi/khronos/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-        <header>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
           <h1>Khronos</h1>
-          <h2>An intuitive Date extensions in Kotlin.</h2>
-        </header>
+          <p>An intuitive Date extensions in Kotlin.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/hotchemi">hotchemi</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/hotchemi/khronos/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/hotchemi/khronos/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/hotchemi/khronos" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
+        <h1>
 <a id="khronos" class="anchor" href="#khronos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>khronos</h1>
 
 <p><a href="https://travis-ci.org/hotchemi/khronos"><img src="https://travis-ci.org/hotchemi/khronos.svg?branch=master" alt="Build Status"></a> <a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="https://img.shields.io/badge/license-APACHE2-green.svg" alt="License"></a></p>
@@ -55,7 +62,7 @@
 
 <span class="pl-c">// shortcuts #2</span>
 <span class="pl-k">val</span> <span class="pl-en">yesterday</span> <span class="pl-k">=</span> <span class="pl-c1">1.</span>days<span class="pl-k">.</span>ago
-<span class="pl-k">val</span> <span class="pl-en">fiveYearsLater</span> <span class="pl-k">=</span> <span class="pl-c1">5.</span>years<span class="pl-k">.</span>later</pre></div>
+<span class="pl-k">val</span> <span class="pl-en">fiveYearsLater</span> <span class="pl-k">=</span> <span class="pl-c1">5.</span>years<span class="pl-k">.</span>since</pre></div>
 
 <h3>
 <a id="initialize-by-specifying-date-components" class="anchor" href="#initialize-by-specifying-date-components" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialize by specifying date components</h3>
@@ -72,12 +79,12 @@
 
 <span class="pl-c">// shortcuts</span>
 <span class="pl-k">val</span> <span class="pl-en">newYearDay</span> <span class="pl-k">=</span> now<span class="pl-k">.</span>beginningOfYear
-<span class="pl-k">val</span> <span class="pl-en">timeLimit</span> <span class="pl-k">=</span> now<span class="pl-k">.</span>endOfHour</pre></div>
+<span class="pl-k">val</span> <span class="pl-en">newYearsEve</span> <span class="pl-k">=</span> now<span class="pl-k">.</span>endOfYear</pre></div>
 
 <h3>
 <a id="check-day-of-the-week" class="anchor" href="#check-day-of-the-week" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Check day of the week</h3>
 
-<div class="highlight highlight-source-Kotlin"><pre>Dates<span class="pl-k">.</span>now<span class="pl-k">.</span>isFriday() <span class="pl-c">// false, OMG!</span></pre></div>
+<div class="highlight highlight-source-Kotlin"><pre>Dates<span class="pl-k">.</span>now<span class="pl-k">.</span>isFriday() <span class="pl-c">// false</span></pre></div>
 
 <h3>
 <a id="time-zone" class="anchor" href="#time-zone" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Time zone</h3>
@@ -88,23 +95,22 @@ dateInCST<span class="pl-k">.</span>timeZone <span class="pl-c">//=&gt; CST (CDT
 <h3>
 <a id="format-and-parse" class="anchor" href="#format-and-parse" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Format and parse</h3>
 
-<div class="highlight highlight-source-Kotlin"><pre><span class="pl-c1">5.</span>minutes<span class="pl-k">.</span>later<span class="pl-k">.</span>stringFromFormat(<span class="pl-s"><span class="pl-pds">"</span>yyyy-MM-dd HH:mm:SS<span class="pl-pds">"</span></span>)
+<div class="highlight highlight-source-Kotlin"><pre><span class="pl-c1">5.</span>minutes<span class="pl-k">.</span>later<span class="pl-k">.</span>toString(<span class="pl-s"><span class="pl-pds">"</span>yyyy-MM-dd HH:mm:SS<span class="pl-pds">"</span></span>)
 <span class="pl-c">//=&gt; "2015-03-01 12:05:00"</span>
 
-<span class="pl-s"><span class="pl-pds">"</span>1987-06-02<span class="pl-pds">"</span></span><span class="pl-k">.</span>dateFromFormat(<span class="pl-s"><span class="pl-pds">"</span>yyyy-MM-dd<span class="pl-pds">"</span></span>)
-<span class="pl-c">//=&gt; Dates.at(year: 1987, month: 6, day: 2)</span></pre></div>
+<span class="pl-s"><span class="pl-pds">"</span>1987-06-02<span class="pl-pds">"</span></span><span class="pl-k">.</span>toDate(<span class="pl-s"><span class="pl-pds">"</span>yyyy-MM-dd<span class="pl-pds">"</span></span>)
+<span class="pl-c">//=&gt; Dates.of(year: 1987, month: 6, day: 2)</span></pre></div>
 
 <h3>
 <a id="compare-dates" class="anchor" href="#compare-dates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compare dates</h3>
 
 <div class="highlight highlight-source-Kotlin"><pre><span class="pl-c1">1.</span>day<span class="pl-k">.</span>ago <span class="pl-k">&gt;</span> <span class="pl-c1">2.</span>days<span class="pl-k">.</span>ago <span class="pl-c">// true</span>
-<span class="pl-c1">1.</span>day<span class="pl-k">.</span>ago <span class="pl-k">in</span> <span class="pl-c1">2.</span>days<span class="pl-k">.</span>ago<span class="pl-k">..</span>Dates<span class="pl-k">.</span>now <span class="pl-c">// true</span>
-firstCommitDate <span class="pl-k">&gt;</span> now <span class="pl-c">// false</span></pre></div>
+<span class="pl-c1">1.</span>day<span class="pl-k">.</span>ago <span class="pl-k">in</span> <span class="pl-c1">2.</span>days<span class="pl-k">.</span>ago<span class="pl-k">..</span>Dates<span class="pl-k">.</span>now <span class="pl-c">// true</span></pre></div>
 
 <h2>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 
-<p><code>${latest.version}</code> is 0.1.0.</p>
+<p><code>${latest.version}</code> is 0.0.1.</p>
 
 <div class="highlight highlight-source-groovy"><pre>dependencies {
   compile <span class="pl-s"><span class="pl-pds">'</span>com.github.hotchemi:khronos:${latest.version}<span class="pl-pds">'</span></span>
@@ -132,15 +138,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 </code></pre>
-        </section>
+      </section>
 
-        <footer>
-          Khronos is maintained by <a href="https://github.com/hotchemi">hotchemi</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
     </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
