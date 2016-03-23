@@ -26,16 +26,16 @@ val fiveYearsSince = 5.years.since
 ### Initialize by specifying date components
 
 ```kotlin
-val birthday = Dates.of(year: 1990, month: 1, day: 21)
-val firstCommitDate = Dates.of(year: 2016, month: 2, day: 26, hour: 18, minute: 58, second: 31)
+val birthday = Dates.of(year = 1990, month = 1, day = 21)
+val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31)
 ```
 
 ### Initialize by changing date components
 
 ```kotlin
 val now = Dates.now
-val christmas = now.with(month: 12, day: 25)
-val thisSunday = now.with(weekday: 1)
+val christmas = now.with(month = 12, day = 25)
+val thisSunday = now.with(weekday = 1)
 
 // shortcuts
 val newYearDay = now.beginningOfYear
@@ -62,7 +62,7 @@ dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
 //=> "2015-03-01 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")
-//=> Dates.of(year: 1987, month: 6, day: 2)
+//=> Dates.of(year = 1987, month = 6, day = 2)
 ```
 
 ### Compare dates
@@ -74,7 +74,7 @@ dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
 
 ## Install
 
-`${latest.version}` is [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion).
+`${latest.version}` = [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion)
 
 ```groovy
 dependencies {
