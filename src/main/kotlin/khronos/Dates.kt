@@ -11,9 +11,9 @@ object Dates {
 
     val today = Date()
 
-    val tomorrow = setDate(1)
+    val tomorrow = setDate(value = 1)
 
-    val yesterday = setDate(-1)
+    val yesterday = setDate(value = -1)
 
     private fun setDate(value: Int): Date {
         calendar.time = Date()

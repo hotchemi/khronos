@@ -39,11 +39,18 @@ fun Date.with(weekday: Int = 0): Date {
 }
 
 fun Date.with(timezone: TimeZone): Date {
-    // create new calendar
-    val cal = Calendar.getInstance(timezone)
+    val cal = Calendar.getInstance(timezone) // new calendar
     cal.time = this
-    return cal.time
+    val date = cal.time
+    date.timezone = timezone
+    return date
 }
+
+var Date.timezone: TimeZone?
+    set(value) {
+        this.timezone = value
+    }
+    get() = null
 
 val Date.beginningOfYear: Date
     get() = with(month = 1, day = 1, hour = 0, minute = 0, second = 0)
