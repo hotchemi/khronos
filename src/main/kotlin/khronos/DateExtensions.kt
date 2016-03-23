@@ -45,11 +45,17 @@ fun Date.with(timezone: TimeZone): Date {
     return cal.time
 }
 
-fun Date.beginningOfYear() = with(month = 1, day = 1, hour = 0, minute = 0, second = 0)
+val Date.beginningOfYear: Date
+    get() = with(month = 1, day = 1, hour = 0, minute = 0, second = 0)
 
-fun Date.endOfYear() = with(month = 12, day = 31, hour = 23, minute = 59, second = 59)
+val Date.endOfYear: Date
+    get() = with(month = 12, day = 31, hour = 23, minute = 59, second = 59)
 
-fun Date.beginningOfMonth() = with(day = 1, hour = 0, minute = 0, second = 0)
+val Date.beginningOfMonth: Date
+    get() = with(day = 1, hour = 0, minute = 0, second = 0)
+
+val Date.endOfMonth: Date
+    get() = endOfMonth()
 
 fun Date.endOfMonth(): Date {
     calendar.time = this
@@ -57,17 +63,23 @@ fun Date.endOfMonth(): Date {
     return with(day = lastDay, hour = 23, minute = 59, second = 59)
 }
 
-fun Date.beginningOfDay() = with(hour = 0, minute = 0, second = 0)
+val Date.beginningOfDay: Date
+    get() = with(hour = 0, minute = 0, second = 0)
 
-fun Date.endOfDay() = with(hour = 23, minute = 59, second = 59)
+val Date.endOfDay: Date
+    get() = with(hour = 23, minute = 59, second = 59)
 
-fun Date.beginningOfHour() = with(minute = 0, second = 0)
+val Date.beginningOfHour: Date
+    get() = with(minute = 0, second = 0)
 
-fun Date.endOfHour() = with(minute = 59, second = 59)
+val Date.endOfHour: Date
+    get() = with(minute = 59, second = 59)
 
-fun Date.beginningOfMinute() = with(second = 0)
+val Date.beginningOfMinute: Date
+    get() = with(second = 0)
 
-fun Date.endOfMinute() = with(second = 59)
+val Date.endOfMinute: Date
+    get() = with(second = 59)
 
 fun Date.stringFromFormat(format: String) = SimpleDateFormat(format).format(this)
 

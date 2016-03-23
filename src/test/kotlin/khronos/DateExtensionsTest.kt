@@ -133,7 +133,7 @@ class DateExtensionsTest {
             Assert.assertTrue(1.day.ago < Dates.today)
         }
         run {
-            Assert.assertTrue(1.day.later > Dates.today)
+            Assert.assertTrue(1.day.since > Dates.today)
         }
     }
 

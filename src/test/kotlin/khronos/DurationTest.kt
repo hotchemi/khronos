@@ -19,7 +19,7 @@ class DurationTest {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.YEAR, 5)
         val fiveYearsLater = calendar.time
-        assertEquals(expected = fiveYearsLater, actual = 5.years.later)
+        assertEquals(expected = fiveYearsLater, actual = 5.years.since)
     }
 
 }
