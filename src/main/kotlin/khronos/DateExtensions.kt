@@ -21,14 +21,14 @@ operator fun Date.minus(duration: Duration): Date {
 
 operator fun Date.rangeTo(other: Date) = DateRange(this, other)
 
-fun Date.with(year: Int = 0, month: Int = 0, day: Int = 0, hour: Int = 0, minute: Int = 0, second: Int = 0): Date {
+fun Date.with(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, minute: Int = -1, second: Int = -1): Date {
     calendar.time = this
-    if (year > 0) calendar.set(Calendar.YEAR, year)
-    if (month > 0) calendar.set(Calendar.MONTH, month - 1)
-    if (day > 0) calendar.set(Calendar.DATE, day - 1)
-    if (hour > 0) calendar.set(Calendar.HOUR, hour)
-    if (minute > 0) calendar.set(Calendar.MINUTE, minute)
-    if (second > 0) calendar.set(Calendar.SECOND, second)
+    if (year > -1) calendar.set(Calendar.YEAR, year)
+    if (month > -1) calendar.set(Calendar.MONTH, month - 1)
+    if (day > -1) calendar.set(Calendar.DATE, day - 1)
+    if (hour > -1) calendar.set(Calendar.HOUR, hour)
+    if (minute > -1) calendar.set(Calendar.MINUTE, minute)
+    if (second > -1) calendar.set(Calendar.SECOND, second)
     return calendar.time
 }
 

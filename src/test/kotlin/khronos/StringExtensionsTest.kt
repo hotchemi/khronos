@@ -1,7 +1,6 @@
 package khronos
 
 import org.junit.Test
-import java.util.*
 
 /**
  * Unit test for StringExtensions.kt.
@@ -9,15 +8,9 @@ import java.util.*
 class StringExtensionsTest {
 
     @Test fun toDate() {
-        val expected = Calendar.getInstance().apply {
-            set(Calendar.YEAR, 1987)
-            set(Calendar.MONTH, 5)
-            set(Calendar.DATE, 1)
-            set(Calendar.HOUR, 12)
-            set(Calendar.MINUTE, 0)
-            set(Calendar.SECOND, 0)
-        }.time
-        assertEquals(expected = expected, actual = "1987-06-02".toDate("yyyy-MM-dd"))
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                actual = "1987-06-02".toDate("yyyy-MM-dd"))
     }
 
 }
