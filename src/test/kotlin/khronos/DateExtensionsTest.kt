@@ -1,6 +1,7 @@
 package khronos
 
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 import java.text.SimpleDateFormat
 import java.util.*
@@ -9,6 +10,10 @@ import java.util.*
  * Unit test for DateExtensions.kt.
  */
 class DateExtensionsTest {
+
+    @Before fun setup() {
+        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
+    }
 
     @Test fun plus() {
         val calendar = Calendar.getInstance()

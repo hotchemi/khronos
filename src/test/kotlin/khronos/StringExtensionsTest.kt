@@ -1,11 +1,17 @@
 package khronos
 
+import org.junit.Before
 import org.junit.Test
+import java.util.*
 
 /**
  * Unit test for StringExtensions.kt.
  */
 class StringExtensionsTest {
+
+    @Before fun setup() {
+        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
+    }
 
     @Test fun toDate() {
         assertEquals(

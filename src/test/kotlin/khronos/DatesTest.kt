@@ -1,5 +1,6 @@
 package khronos
 
+import org.junit.Before
 import org.junit.Test
 import java.util.*
 
@@ -7,6 +8,10 @@ import java.util.*
  * Unit test for [Dates].
  */
 class DatesTest {
+
+    @Before fun setup() {
+        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
+    }
 
     @Test fun now() {
         assertEquals(expected = Date(), actual = Dates.now)
