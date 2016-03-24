@@ -48,13 +48,6 @@ val newYearsEve = now.endOfYear
 Dates.now.isFriday() // false
 ```
 
-### Time zone
-
-```kotlin
-val dateInCST = Dates.now.with(TimeZone.getTimeZone("CST"))
-dateInCST.timeZone //=> CST (CDT) offset -18000 (Daylight)
-```
-
 ### Format and parse
 
 ```kotlin

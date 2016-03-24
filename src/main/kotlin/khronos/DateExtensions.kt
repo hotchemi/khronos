@@ -3,7 +3,7 @@ package khronos
 import java.text.SimpleDateFormat
 import java.util.*
 
-val calendar: Calendar by lazy {
+internal val calendar: Calendar by lazy {
     Calendar.getInstance()
 }
 
@@ -32,25 +32,11 @@ fun Date.with(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, mi
     return calendar.time
 }
 
-fun Date.with(weekday: Int = 0): Date {
+fun Date.with(weekday: Int = -1): Date {
     calendar.time = this
-    if (weekday > 0) calendar.set(Calendar.WEEK_OF_MONTH, weekday)
+    if (weekday > -1) calendar.set(Calendar.WEEK_OF_MONTH, weekday)
     return calendar.time
 }
-
-fun Date.with(timezone: TimeZone): Date {
-    val cal = Calendar.getInstance(timezone) // new calendar
-    cal.time = this
-    val date = cal.time
-    date.timezone = timezone
-    return date
-}
-
-var Date.timezone: TimeZone?
-    set(value) {
-        this.timezone = value
-    }
-    get() = null
 
 val Date.beginningOfYear: Date
     get() = with(month = 1, day = 1, hour = 0, minute = 0, second = 0)

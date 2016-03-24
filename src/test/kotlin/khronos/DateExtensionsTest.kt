@@ -19,8 +19,23 @@ class DateExtensionsTest {
     @Test fun minus() {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.DAY_OF_MONTH, -2)
-        val dayBeforeYesterDay = calendar.time
-        assertEquals(expected = dayBeforeYesterDay, actual = Dates.today - 2.days)
+        val dayBeforeYesterday = calendar.time
+        assertEquals(expected = dayBeforeYesterday, actual = Dates.today - 2.days)
+    }
+
+    @Test fun with() {
+        run {
+            val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+            assertEquals(
+                    expected = Dates.of(year = 1990, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                    actual = date.with(year = 1990))
+        }
+        run {
+            val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+            assertEquals(
+                    expected = Dates.of(year = 1987, month = 6, day = 9, hour = 12, minute = 0, second = 0),
+                    actual = date.with(weekday = 2))
+        }
     }
 
     @Test fun isSunday() {
