@@ -25,7 +25,7 @@ object Dates {
         calendar.time = Date()
         if (year > 0) calendar.set(Calendar.YEAR, year)
         if (month > 0) calendar.set(Calendar.MONTH, month - 1)
-        if (day > 0) calendar.set(Calendar.DATE, day)
+        if (day > 0) calendar.set(Calendar.DATE, day - 1)
         if (hour > 0) calendar.set(Calendar.HOUR, hour)
         if (minute > 0) calendar.set(Calendar.MINUTE, minute)
         if (second > 0) calendar.set(Calendar.SECOND, second)

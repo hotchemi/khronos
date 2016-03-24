@@ -12,8 +12,8 @@ class StringExtensionsTest {
         val expected = Calendar.getInstance().apply {
             set(Calendar.YEAR, 1987)
             set(Calendar.MONTH, 5)
-            set(Calendar.DATE, 2)
-            set(Calendar.HOUR, 0)
+            set(Calendar.DATE, 1)
+            set(Calendar.HOUR, 12)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
         }.time
