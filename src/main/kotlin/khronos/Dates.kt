@@ -21,7 +21,7 @@ object Dates {
         return calendar.time
     }
 
-    fun of(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, minute: Int = -1, second: Int = -1): Date {
+    fun of(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, minute: Int = -1, second: Int = -1, millisecond: Int = -1): Date {
         calendar.time = Date()
         if (year > -1) calendar.set(Calendar.YEAR, year)
         if (month > -1) calendar.set(Calendar.MONTH, month - 1)
@@ -29,6 +29,7 @@ object Dates {
         if (hour > -1) calendar.set(Calendar.HOUR, hour)
         if (minute > -1) calendar.set(Calendar.MINUTE, minute)
         if (second > -1) calendar.set(Calendar.SECOND, second)
+        if (millisecond > -1) calendar.set(Calendar.MILLISECOND, millisecond)
         return calendar.time
     }
 

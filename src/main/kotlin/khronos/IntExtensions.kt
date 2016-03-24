@@ -43,3 +43,9 @@ val Int.second: Duration
 
 val Int.seconds: Duration
     get() = second
+
+val Int.millisecond: Duration
+    get() = Duration(unit = Calendar.MILLISECOND, value = this)
+
+val Int.milliseconds: Duration
+    get() = millisecond
