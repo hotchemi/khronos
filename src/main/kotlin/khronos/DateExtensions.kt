@@ -3,17 +3,19 @@ package khronos
 import java.text.SimpleDateFormat
 import java.util.*
 
-internal val calendar: Calendar by lazy {
-    Calendar.getInstance()
-}
+//internal val calendar: Calendar by lazy {
+//    Calendar.getInstance()
+//}
 
 operator fun Date.plus(duration: Duration): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     calendar.add(duration.unit, duration.value)
     return calendar.time
 }
 
 operator fun Date.minus(duration: Duration): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     calendar.add(duration.unit, -duration.value)
     return calendar.time
@@ -22,6 +24,7 @@ operator fun Date.minus(duration: Duration): Date {
 operator fun Date.rangeTo(other: Date) = DateRange(this, other)
 
 fun Date.with(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, minute: Int = -1, second: Int = -1): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     if (year > -1) calendar.set(Calendar.YEAR, year)
     if (month > -1) calendar.set(Calendar.MONTH, month - 1)
@@ -33,6 +36,7 @@ fun Date.with(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, mi
 }
 
 fun Date.with(weekday: Int = -1): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     if (weekday > -1) calendar.set(Calendar.WEEK_OF_MONTH, weekday)
     return calendar.time
@@ -51,6 +55,7 @@ val Date.endOfMonth: Date
     get() = endOfMonth()
 
 fun Date.endOfMonth(): Date {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     val lastDay = calendar.getActualMaximum(Calendar.DATE)
     return with(day = lastDay, hour = 23, minute = 59, second = 59)
@@ -77,36 +82,43 @@ val Date.endOfMinute: Date
 fun Date.toString(format: String) = SimpleDateFormat(format).format(this)
 
 fun Date.isSunday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
 }
 
 fun Date.isMonday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY
 }
 
 fun Date.isTuesday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY
 }
 
 fun Date.isWednesday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY
 }
 
 fun Date.isThursday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY
 }
 
 fun Date.isFriday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY
 }
 
 fun Date.isSaturday(): Boolean {
+    val calendar = Calendar.getInstance()
     calendar.time = this
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
 }

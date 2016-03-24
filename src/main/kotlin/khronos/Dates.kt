@@ -16,12 +16,14 @@ object Dates {
     val yesterday = setDate(value = -1)
 
     private fun setDate(value: Int): Date {
+        val calendar = Calendar.getInstance()
         calendar.time = Date()
         calendar.add(Calendar.DATE, value);
         return calendar.time
     }
 
     fun of(year: Int = -1, month: Int = -1, day: Int = -1, hour: Int = -1, minute: Int = -1, second: Int = -1): Date {
+        val calendar = Calendar.getInstance()
         calendar.time = Date()
         if (year > -1) calendar.set(Calendar.YEAR, year)
         if (month > -1) calendar.set(Calendar.MONTH, month - 1)
