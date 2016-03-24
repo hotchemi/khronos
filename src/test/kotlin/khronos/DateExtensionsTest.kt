@@ -49,7 +49,7 @@ class DateExtensionsTest {
     @Test fun endOfYear() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 12, day = 31, hour = 23, minute = 59, second = 59),
+                expected = Dates.of(year = 1987, month = 12, day = 31, hour = 23, minute = 59, second = 59, millisecond = 999),
                 actual = date.endOfYear)
     }
 
@@ -63,7 +63,7 @@ class DateExtensionsTest {
     @Test fun endOfMonth() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 30, hour = 11, minute = 59, second = 59),
+                expected = Dates.of(year = 1987, month = 6, day = 30, hour = 11, minute = 59, second = 59, millisecond = 999),
                 actual = date.endOfMonth)
     }
 
@@ -77,7 +77,7 @@ class DateExtensionsTest {
     @Test fun endOfDay() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 9, minute = 0, second = 0)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 23, minute = 59, second = 59),
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 23, minute = 59, second = 59, millisecond = 999),
                 actual = date.endOfDay)
     }
 
@@ -91,7 +91,7 @@ class DateExtensionsTest {
     @Test fun endOfHour() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 59, second = 59),
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 59, second = 59, millisecond = 999),
                 actual = date.endOfHour)
     }
 
@@ -105,7 +105,7 @@ class DateExtensionsTest {
     @Test fun endOfMinute() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 59),
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 59, millisecond = 999),
                 actual = date.endOfMinute)
     }
 
