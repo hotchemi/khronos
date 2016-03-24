@@ -77,7 +77,9 @@ dependencies {
 
 ## Notice
 
-khronos is definitely inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece).
+- khronos doesn't support timezone yet so please don't use it in production.
+  - I'll fix it ASAP.
+- khronos is definitely inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece).
 
 ## Licence
 
