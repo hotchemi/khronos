@@ -1,5 +1,8 @@
 language: java
 jdk:
     - oraclejdk8
+before_script:
+  - echo 'Asia/Tokyo' | sudo tee /etc/timezone
+  - sudo dpkg-reconfigure --frontend noninteractive tzdata
 script:
     - ./gradlew clean test --debug

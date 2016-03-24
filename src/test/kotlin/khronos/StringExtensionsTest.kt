@@ -9,10 +9,6 @@ import java.util.*
  */
 class StringExtensionsTest {
 
-    @Before fun setup() {
-        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
-    }
-
     @Test fun toDate() {
         assertEquals(
                 expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),

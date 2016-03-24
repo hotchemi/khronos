@@ -9,10 +9,6 @@ import java.util.*
  */
 class DatesTest {
 
-    @Before fun setup() {
-        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
-    }
-
     @Test fun now() {
         assertEquals(expected = Date(), actual = Dates.now)
     }

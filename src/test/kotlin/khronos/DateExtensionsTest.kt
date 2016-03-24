@@ -11,10 +11,6 @@ import java.util.*
  */
 class DateExtensionsTest {
 
-    @Before fun setup() {
-        calendar.timeZone = TimeZone.getTimeZone("Asia/Tokyo")
-    }
-
     @Test fun plus() {
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.WEEK_OF_MONTH, 1)
