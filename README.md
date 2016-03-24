@@ -51,7 +51,7 @@ Dates.now.isFriday() // false
 ### Format and parse
 
 ```kotlin
-5.minutes.later.toString("yyyy-MM-dd HH:mm:SS")
+5.minutes.since.toString("yyyy-MM-dd HH:mm:SS")
 //=> "2015-03-01 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")

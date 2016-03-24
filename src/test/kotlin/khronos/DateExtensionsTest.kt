@@ -2,6 +2,7 @@ package khronos
 
 import org.junit.Assert
 import org.junit.Test
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -36,6 +37,84 @@ class DateExtensionsTest {
                     expected = Dates.of(year = 1987, month = 6, day = 9, hour = 12, minute = 0, second = 0),
                     actual = date.with(weekday = 2))
         }
+    }
+
+    @Test fun beginningOfYear() {
+        val date = Dates.of(year = 2016, month = 6, day = 2, hour = 5, minute = 30, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 2016, month = 1, day = 1, hour = 0, minute = 0, second = 0),
+                actual = date.beginningOfYear)
+    }
+
+    @Test fun endOfYear() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 12, day = 31, hour = 23, minute = 59, second = 59),
+                actual = date.endOfYear)
+    }
+
+    @Test fun beginningOfMonth() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 5, minute = 0, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 1, hour = 0, minute = 0, second = 0),
+                actual = date.beginningOfMonth)
+    }
+
+    @Test fun endOfMonth() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 30, hour = 11, minute = 59, second = 59),
+                actual = date.endOfMonth)
+    }
+
+    @Test fun beginningOfDay() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                actual = date.beginningOfDay)
+    }
+
+    @Test fun endOfDay() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 9, minute = 0, second = 0)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 23, minute = 59, second = 59),
+                actual = date.endOfDay)
+    }
+
+    @Test fun beginningOfHour() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                actual = date.beginningOfHour)
+    }
+
+    @Test fun endOfHour() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 59, second = 59),
+                actual = date.endOfHour)
+    }
+
+    @Test fun beginningOfMinute() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 0),
+                actual = date.beginningOfMinute)
+    }
+
+    @Test fun endOfMinute() {
+        val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 30)
+        assertEquals(
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 30, second = 59),
+                actual = date.endOfMinute)
+    }
+
+    @Test fun to_String() {
+        val calendar= Calendar.getInstance()
+        calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 5)
+        Assert.assertEquals(
+                SimpleDateFormat("yyyy-MM-dd HH").format(calendar.time),
+                5.minutes.since.toString("yyyy-MM-dd HH"))
     }
 
     @Test fun isSunday() {
