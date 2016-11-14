@@ -42,7 +42,7 @@ class DatesTest {
 
     @Test fun dateDay() {
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.DATE, 20)
+        calendar.set(Calendar.DATE, 21)
         assertEquals(expected = calendar.time, actual = Dates.of(day = 21))
     }
 

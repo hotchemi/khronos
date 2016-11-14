@@ -63,14 +63,14 @@ class DateExtensionsTest {
     @Test fun endOfMonth() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 30, hour = 11, minute = 59, second = 59),
+                expected = Dates.of(year = 1987, month = 6, day = 30, hour = 23, minute = 59, second = 59),
                 actual = date.endOfMonth)
     }
 
     @Test fun beginningOfDay() {
         val date = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0)
         assertEquals(
-                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 12, minute = 0, second = 0),
+                expected = Dates.of(year = 1987, month = 6, day = 2, hour = 0, minute = 0, second = 0),
                 actual = date.beginningOfDay)
     }
 
@@ -110,7 +110,7 @@ class DateExtensionsTest {
     }
 
     @Test fun to_String() {
-        val calendar= Calendar.getInstance()
+        val calendar = Calendar.getInstance()
         calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 5)
         Assert.assertEquals(
                 SimpleDateFormat("yyyy-MM-dd HH").format(calendar.time),
