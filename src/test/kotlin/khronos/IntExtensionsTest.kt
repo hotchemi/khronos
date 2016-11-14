@@ -41,11 +41,11 @@ class IntExtensionsTest {
     }
 
     @Test fun hour() {
-        assertEquals(expected = Duration(unit = Calendar.HOUR, value = 1), actual = 1.hour)
+        assertEquals(expected = Duration(unit = Calendar.HOUR_OF_DAY, value = 1), actual = 1.hour)
     }
 
     @Test fun hours() {
-        assertEquals(expected = Duration(unit = Calendar.HOUR, value = 11), actual = 11.hours)
+        assertEquals(expected = Duration(unit = Calendar.HOUR_OF_DAY, value = 11), actual = 11.hours)
     }
 
     @Test fun minute() {
