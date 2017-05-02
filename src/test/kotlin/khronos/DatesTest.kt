@@ -42,13 +42,13 @@ class DatesTest {
 
     @Test fun dateDay() {
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.DATE, 20)
+        calendar.set(Calendar.DATE, 21)
         assertEquals(expected = calendar.time, actual = Dates.of(day = 21))
     }
 
     @Test fun dateHour() {
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR, 4)
+        calendar.set(Calendar.HOUR_OF_DAY, 4)
         assertEquals(expected = calendar.time, actual = Dates.of(hour = 4))
     }
 

@@ -27,7 +27,7 @@ val Int.days: Duration
     get() = day
 
 val Int.hour: Duration
-    get() = Duration(unit = Calendar.HOUR, value = this)
+    get() = Duration(unit = Calendar.HOUR_OF_DAY, value = this)
 
 val Int.hours: Duration
     get() = hour
