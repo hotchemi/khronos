@@ -6,7 +6,6 @@ import java.util.*
  * NOTE: In Kotlin you can't add companion object extensions to existing Java class.
  */
 object Dates {
-
     val now = Date()
 
     val today = Date()
@@ -31,5 +30,4 @@ object Dates {
         if (second > -1) calendar.set(Calendar.SECOND, second)
         return calendar.time
     }
-
 }

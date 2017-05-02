@@ -3,7 +3,6 @@ package khronos
 import java.util.*
 
 class Duration(internal val unit: Int, internal val value: Int) {
-
     val ago = calculate(from = Date(), value = -value)
 
     val since = calculate(from = Date(), value = value)
@@ -22,5 +21,4 @@ class Duration(internal val unit: Int, internal val value: Int) {
         }
         return unit == other.unit && value == other.value
     }
-
 }
