@@ -9,12 +9,11 @@ An intuitive Date extensions in Kotlin.
 ### Add durations to date
 
 ```kotlin
-val now = Dates.now
-val nextWeek = now + 1.week
-val dayBeforeYesterday = now - 2.days
+val today = Dates.today
+val nextWeek = today + 1.week
+val dayBeforeYesterday = today - 2.days
 
 // shortcuts #1
-val today = Dates.today
 val tomorrow = Dates.tomorrow
 val yesterday = Dates.yesterday
 
@@ -33,19 +32,19 @@ val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minu
 ### Initialize by changing date components
 
 ```kotlin
-val now = Dates.now
-val christmas = now.with(month = 12, day = 25)
-val thisSunday = now.with(weekday = 1)
+val today = Dates.today
+val christmas = today.with(month = 12, day = 25)
+val thisSunday = today.with(weekday = 1)
 
 // shortcuts
-val newYearDay = now.beginningOfYear
-val newYearsEve = now.endOfYear
+val newYearDay = today.beginningOfYear
+val newYearsEve = today.endOfYear
 ```
 
 ### Check day of the week
 
 ```kotlin
-Dates.now.isFriday() // false
+Dates.today.isFriday() // false
 ```
 
 ### Format and parse
@@ -62,7 +61,7 @@ Dates.now.isFriday() // false
 
 ```kotlin
 1.day.ago > 2.days.ago // true
-1.day.ago in 2.days.ago..Dates.now // true
+1.day.ago in 2.days.ago..Dates.today // true
 ```
 
 ## Install
@@ -77,8 +76,6 @@ dependencies {
 
 ## Notice
 
-- khronos doesn't support timezone yet so please don't use it in production.
-  - I'll fix it ASAP.
 - khronos is definitely inspired by [naoty/Timepiece(Swift)](https://github.com/naoty/Timepiece).
 
 ## Licence
