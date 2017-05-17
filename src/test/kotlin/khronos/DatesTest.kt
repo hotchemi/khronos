@@ -9,7 +9,7 @@ import java.util.*
 class DatesTest {
 
     @Test fun now() {
-        assertEquals(expected = Date(), actual = Dates.now)
+        assertEquals(expected = Date(), actual = Dates.today)
     }
 
     @Test fun today() {
