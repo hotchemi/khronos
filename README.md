@@ -26,7 +26,7 @@ val fiveYearsSince = 5.years.since
 
 ```kotlin
 val birthday = Dates.of(year = 1990, month = 1, day = 21)
-val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31)
+val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
 ```
 
 ### Initialize by changing date components
