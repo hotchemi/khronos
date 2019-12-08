@@ -1,6 +1,6 @@
 # khronos
 
-![](https://github.com/hotchemi/khronos/workflows/Android%20CI/badge.svg?branch=issues/issue127)
+![](https://github.com/hotchemi/khronos/workflows/android/badge.svg?branch=issues/issue127)
 
 [![Build Status](https://travis-ci.org/hotchemi/khronos.svg?branch=master)](https://travis-ci.org/hotchemi/khronos) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
