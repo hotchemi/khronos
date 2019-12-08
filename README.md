@@ -1,6 +1,6 @@
 # khronos
 
-[![](https://github.com/hotchemi/khronos/workflows/build/badge.svg) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+![Build Status](https://github.com/hotchemi/khronos/workflows/build/badge.svg) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An intuitive Date extensions in Kotlin.
 
