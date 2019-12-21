@@ -3,6 +3,8 @@ package khronos
 import org.junit.Assert
 import org.junit.Test
 import java.text.SimpleDateFormat
+import java.time.Duration
+import java.time.temporal.TemporalUnit
 import java.util.*
 
 /**
@@ -234,6 +236,13 @@ class DateExtensionsTest {
         run {
             Assert.assertTrue(1.day.since > Dates.today)
         }
+    }
+
+    @Test fun diffNowToWeekLater() {
+        val now = Dates.today
+        val weekLater = now + 1.week
+        val difference = now.to(weekLater)
+       //TODO
     }
 
 }
