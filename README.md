@@ -1,6 +1,6 @@
 # khronos
 
-[![Build Status](https://travis-ci.org/hotchemi/khronos.svg?branch=master)](https://travis-ci.org/hotchemi/khronos) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+![Build Status](https://github.com/hotchemi/khronos/workflows/build/badge.svg) [![Download](https://api.bintray.com/packages/hotchemi/maven/khronos/images/download.svg) ](https://bintray.com/hotchemi/maven/khronos/_latestVersion) [![License](https://img.shields.io/badge/license-APACHE2-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An intuitive Date extensions in Kotlin.
 
@@ -26,7 +26,7 @@ val fiveYearsSince = 5.years.since
 
 ```kotlin
 val birthday = Dates.of(year = 1990, month = 1, day = 21)
-val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31)
+val firstCommitDate = Dates.of(year = 2016, month = 2, day = 26, hour = 18, minute = 58, second = 31, millisecond = 777)
 ```
 
 ### Initialize by changing date components
@@ -50,7 +50,7 @@ Dates.today.isFriday() // false
 ### Format and parse
 
 ```kotlin
-5.minutes.since.toString("yyyy-MM-dd HH:mm:SS")
+5.minutes.since.toString("yyyy-MM-dd HH:mm:ss")
 //=> "2015-03-01 12:05:00"
 
 "1987-06-02".toDate("yyyy-MM-dd")
