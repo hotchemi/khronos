@@ -112,7 +112,8 @@ fun Date.isSaturday(): Boolean {
     return calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY
 }
 
+/**Creates a Duration from this Date to the passed in one, precise to a second.*/
 fun Date.to(other: Date): Duration {
     val difference = other.time - time
-    return Duration(Calendar.MILLISECOND, difference.toInt())
+    return Duration(Calendar.SECOND, (difference / 1000).toInt())
 }
