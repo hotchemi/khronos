@@ -236,4 +236,19 @@ class DateExtensionsTest {
         }
     }
 
+    @Test fun nowToWeekLater() {
+        val now = Dates.today
+        val weekLater = now + 1.week
+        val difference = now.to(weekLater)
+        assertVeryClose(1000, difference.ago, now - 1.week) // The duration should be 1 week long
+    }
+
+    @Test fun agoToYearsLater() {
+        val now = Dates.today
+        val twentyYearsAgo = now - 20.years
+        val twentyYearsLater = now + 20.years
+        val difference = twentyYearsAgo.to(twentyYearsLater)
+        assertVeryClose(1000, difference.ago, now - 40.years) // The duration should be 40 years long
+    }
+
 }
