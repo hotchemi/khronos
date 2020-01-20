@@ -9,7 +9,7 @@ val Int.years: Duration
     get() = year
 
 val Int.month: Duration
-    get() = Duration(unit = Calendar.MONTH, value = this - 1)
+    get() = Duration(unit = Calendar.MONTH, value = this)
 
 val Int.months: Duration
     get() = month

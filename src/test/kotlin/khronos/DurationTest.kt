@@ -22,4 +22,13 @@ class DurationTest {
         assertEquals(expected = fiveYearsLater, actual = 5.years.since)
     }
 
+    @Test fun addMonth() {
+        val n = Dates.today + 5.months
+        val dayNumber = n.dayWithCalendar()
+        val monthNumber = n.monthWithCalendar()
+        val monthAgo = n - 1.month
+        assert(monthAgo.dayWithCalendar() == dayNumber)
+        assert(monthAgo.monthWithCalendar() + 1 == monthNumber)
+    }
+
 }
