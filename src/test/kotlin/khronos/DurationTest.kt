@@ -22,13 +22,15 @@ class DurationTest {
         assertEquals(expected = fiveYearsLater, actual = 5.years.since)
     }
 
-    @Test fun addMonth() {
+    /**Test that subtracting a month results in the correct change to the date.*/
+    @Test fun subtractMonth() {
         val n = Dates.today + 5.months
-        val dayNumber = n.dayWithCalendar()
-        val monthNumber = n.monthWithCalendar()
+        val dayNumber = n.dayByCalendar()
+        val monthNumber = n.monthByCalendar()
         val monthAgo = n - 1.month
-        assert(monthAgo.dayWithCalendar() == dayNumber)
-        assert(monthAgo.monthWithCalendar() + 1 == monthNumber)
+        assert(monthAgo.dayByCalendar() == dayNumber)
+        val delta = (if (monthNumber == 0) 11 else monthNumber - 1)
+        assert(monthAgo.monthByCalendar() == delta)
     }
 
 }
