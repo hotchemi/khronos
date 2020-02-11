@@ -17,11 +17,11 @@ class IntExtensionsTest {
     }
 
     @Test fun month() {
-        assertEquals(expected = Duration(unit = Calendar.MONTH, value = 0), actual = 1.month)
+        assertEquals(expected = Duration(unit = Calendar.MONTH, value = 1), actual = 1.month)
     }
 
     @Test fun months() {
-        assertEquals(expected = Duration(unit = Calendar.MONTH, value = 2), actual = 3.months)
+        assertEquals(expected = Duration(unit = Calendar.MONTH, value = 3), actual = 3.months)
     }
 
     @Test fun week() {

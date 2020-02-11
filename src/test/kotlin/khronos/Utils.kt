@@ -21,3 +21,17 @@ fun assertVeryClose(maxOffset: Int = 200, from: Date, to: Date) {
 fun assertEquals(expected: Duration, actual: Duration) {
     Assert.assertEquals(expected, actual)
 }
+
+/**Returns the day of month for this date.*/
+fun Date.dayByCalendar(): Int {
+    val calendar = Calendar.getInstance()
+    calendar.time = this
+    return calendar.get(Calendar.DAY_OF_MONTH)
+}
+
+/**Returns the month for this date.*/
+fun Date.monthByCalendar(): Int {
+    val calendar = Calendar.getInstance()
+    calendar.time = this
+    return calendar.get(Calendar.MONTH)
+}
